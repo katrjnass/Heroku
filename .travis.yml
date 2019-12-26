@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - node
+script:
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key: $api_key
+  app: floating-headland-73672

@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<HEAD>
+    <meta charset="utf-8">
+    <TITLE>Перемикачі</TITLE>
+    <script>
+        function chpict(obj){
+            var lin =  document.getElementById('line');
+            if(obj.elements[0].checked)
+            {
+                lin.style.borderWidth=obj.elements[0].value+"px"
+            }
+            else
+            {
+                lin.style.borderWidth=obj.elements[1].value+"px" ;
+            }
+            if (obj.elements[2].checked)
+                lin.style.marginTop=obj.elements[2].value+"px"
+            else
+                lin.style.marginTop=obj.elements[3].value+"px"
+        }
+        </script>
+    <script language="JavaScript">
+       function questionnaire(obj) {
+           if(obj.elements[0].checked)
+           {obj.resSex.value=obj.elements[0].value}
+           else
+           {obj.resSex.value=obj.elements[1].value}
+           obj.resAge.value=obj.elements[2].value;
+           if(obj.elements[3].checked)
+           {obj.resStatus.value=obj.elements[3].value}
+           else
+           {obj.resStatus.value=obj.elements[4].value}
+       }
+
+    </script>
+</HEAD>
+<BODY>
+<p>Продемонструвати зміну розмірів і положення на сторінці горизонтальної лінії hr. </p>
+<FORM name="form1">
+    Оберіть значення параметра вирівнювання і натисніть кнопку
+    <b>Переглянути</b>.<br>
+    <PRE>
+        <input type="radio" name="px" checked value="2">small
+        <input type="radio" name="px" value="60">big
+        <input type="radio" name="alg" checked value="15">up
+        <input type="radio" name="alg" value="80">down
+ </PRE>
+    <hr id="line" noshade size="20">
+    <input type="button" value= "Переглянути" onclick="chpict(form1)">
+</FORM>
+<p>Розробити анкету, що визначає стать, вік, сімейне положення особи, і передає ці дані в скрипт. </p>
+<form name="form2">
+    Оберіть значення параметра вирівнювання і натисніть кнопку <b>Встановити</b>.<br>
+    Оберіть свою стать:
+    <PRE>
+        <input type="radio" name="sex"  checked value="female">жіноча
+        <input type="radio" name="sex" value="male">чоловіча
+    </PRE>
+    Напишіть свій вік:
+    <PRE>
+        <input type="text" size="5" name="age" >
+    </PRE>
+        Оберіть своє сімейне положення:
+    <pre>
+    <input type="radio" name="status" checked value="married">одружений/заміжня
+        <input type="radio" name="status" value="unmarried">не одружений/не заміжня
+ </pre>
+    <input type="button" value= "Встановити" onclick="questionnaire(form2)">
+    <br><br>
+    Стать:<input type="text" size="10" name="resSex"><br>
+    Вік:<input type="text" size="10" name="resAge"><br>
+    Сімейне положення:<input type="text" size="10" name="resStatus">
+</form>
+</BODY>
+</HTML>
